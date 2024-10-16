@@ -1,0 +1,280 @@
+R is a programming language created by Ross Ihaka and Robert Gentleman at the University of Auckland in the early 1990s. It's important because it's the primary tool used by statisticians and data analysts for data analysis, visualization, and statistical modeling.
+
+Many other programming languages, such as Python, have libraries that interface with R, making it a versatile tool in various domains, including data science, machine learning, and bioinformatics.
+
+R remains one of the most popular languages for data analysis and statistics, with a large and active community of users and developers contributing to its growth and evolution.
+In R, there is one primary way to add comments to your code:
+
+Syntax: # Your comment here
+# This is a comment. The print statement prints 12.
+print(12)
+But to output a text, we do this
+
+print("I love R");
+
+if we do this print(hello)
+we get the runtime  eror: Error: object 'hello' not found  ,Execution halted
+
+In R, the print() function prints each value on a new line by default. If you want to print values on separate lines,
+ you can use multiple print() statements. However, if you want to control the format more precisely, you can use the cat() function with \n for new lines.
+Outputs In Separate Lines
+When we use multiple cat statements without \n, everything gets printed on one line.
+
+cat(20)
+cat(40)
+Output:
+
+2040
+What to do if we want to print 20 and 40 on separate lines?
+We can use \n to have the next outputs be on the next line. It is like pressing the "Enter" / "Return" key on your keyboard, but for the output displayed.
+
+Example:
+
+cat(20, "\n")
+cat(40, "\n")
+Output:
+
+20
+40
+You can use the "cat()" function, which allows you to print multiple items in a single output statement and automatically adds a black space between them.
+
+cat(2, 3);
+Output:
+// 2 3
+print(12); these semi colon and without semi colon lines are valid in r programming  both are equivalent
+print(12)
+
+Variables in R
+A variable is like a labelled box where you can store data. Imagine you have a box labelled "age" and put the number 25 in it.
+ In R, you would do this by writing age <- 25;. This means you're storing the number 25 in the variable named age.
+
+Here's the cool part: whenever you use age in your code, R will remember it is 25. For example, if you write print(age), R will show 25.
+age <- 25; like this we create variable in r
+print(age)
+s, you can use the assignment operator in R to create variables: 
+ 
+<- The left arrow operator is the preferred way to assign values to variables in R, especially in scripts and functions. For example, name <- "John" and age <- 40 create the variables name and age. 
+ 
+= The equal sign can also be used for assignment, but its use is discouraged. It's often used in function calls to specify named arguments. 
+ 
+->: The right arrow operator assigns the value on the left to a variable on the right. For example, 42 -> x assigns the value of 42 to the variable x. 
+ 
+<<- A global version of the left arrow operator. 
+ 
+->>: A global version of the right arrow operator. 
+ 
+You can also use the built-in assign function to assign variables. The first argument you pass in is the name of the variable you're going to make and then the second argument is the value. 
+ In other programming language, it is common to use = as an assignment operator. In R,
+ we can use both = and <- as assignment operators. 
+However, <- is preferred in most cases because the = operator can be forbidden in some context in R.
+When we declare a variable, we do not need to specify what type of variable because R automatically assigns
+ the appropriate type based on the value you assign to the variable.
+
+Explanation of Data Types in R:
+Numeric (default for numbers): This is the default data type for numbers in R and can represent both integers and decimals.
+Integer: You can explicitly define an integer by appending an L to the number.
+Double: This is the default for floating-point numbers.
+Character: Stores single or multiple characters (strings).
+Logical: Equivalent to boolean, stores TRUE or FALSE.
+
+ we can also write the code like this
+length = 45
+width = 76
+area= length * width;
+cat("The Area of the given rectangle is",area)
+ its also valid in r programming.
+
+Negative Numbers
+In R, when you divide an 'int' by another 'int', you get the exact value of the quotient.
+
+For example, 3 / 2 would be 1.5.
+To perform integer division we use %/% symbol instead of /, it prints the largest integer less than or equal to the quotient
+For example, 9/2 would be 4.
+
+Here are some more examples of relation operators:
+
+a > b          (Checks if a is greater than b)
+a == b        (Checks if a is equal to b)
+a != b        (Checks if a is not equal to b)
+a >= b        (Checks if a is greater than or equal to b)
+a <= b        (Checks if a is less than or equal to b)
+
+Basic Logical Operations
+Here are the basic logical operators and their usage:
+
+&&   (Logical AND: returns TRUE only if both conditions are true)
+a > 5 && a < 10  # returns TRUE only if a is greater than 5 but less than 10
+||  (Logical OR: returns TRUE if at least one condition is true)
+a > 10 || a < 5  # returns TRUE if a is greater than 10 or less than 5
+!   (Logical NOT: reverses the result of the condition)
+!(a > 5 && a < 10) # returns TRUE in the opposite cases of the first condition above
+
+condition: This is the expression to be evaluated. If it is true, the operator returns value_if_true; otherwise, it returns value_if_false.
+value_if_true: This is the value returned if the condition evaluates to true.
+value_if_false: This is the value returned if the condition evaluates to false.
+
+a <- 10
+b <- 5
+max <- ifelse(a > b, a, b)
+In this example:
+
+a > b is the condition.
+a is value_if_true.
+b is value_if_false.
+If a is greater than b, max will be assigned the value of a; otherwise, it will be assigned the value of b.
+
+name<- ifelse(name=='A' || name=='C',TRUE,FALSE)
+age=19
+age<-ifelse(age>=18,TRUE,FLASE)
+
+Operator precedence and Associativity
+When figuring out the value of expressions, two important rules are followed: operator precedence and associativity. These rules ensure that expressions are evaluated in a consistent and predictable manner.
+
+Operator Precedence
+Operator precedence means that some operations are done before others when evaluating an expression. Operators with higher precedence are evaluated before those with lower precedence. This concept is similar to the rules of arithmetic, where multiplication and division take precedence over addition and subtraction.
+
+Here's the order of operator precedence in R, from highest to lowest:
+
+Parentheses: ()
+Exponentiation: ^
+Unary operators: +, -, !
+Multiplicative operators: *, /, %/%, %%
+Additive operators: +, -
+Relational operators: <, >, <=, >=
+Equality operators: ==, !=
+Logical AND operator: &
+Logical OR operator: |
+Assignment operators: <-, =, <<-, ->, ->>
+Associativity
+When an expression contains operators of the same precedence level, associativity determines their evaluation order.
+
+Left-Associative: Operators are evaluated from left to right. For instance, in a + b - c, addition and subtraction, being left-associative, will first evaluate a + b, and then subtract c from the result.
+
+Right-Associative: Although less common in R, some operators are right-associative, meaning they are evaluated from right to left. An example is the assignment operator <-.
+In a <- b <- c, c is assigned to b, and then the resulting value of b is assigned to a.
+
+Type Conversion: In R, type conversion (also known as type coercion) happens automatically when you use different data types in an expression. R will convert data types to make them compatible with each other.
+
+Example:
+
+a <- 5
+b <- 2.5
+result <- a + b  # 'a' is automatically changed to a numeric (float) before adding
+print(result)  # prints 7.5
+Type Casting: In R, you can explicitly change the type of a variable using functions like as.numeric(), as.integer(), as.character(), etc. This is similar to type casting in C.
+
+Example:
+
+a <- 10
+b <- 3
+result <- a / b  # 'a' is explicitly changed to numeric (float) before dividing
+print(as.integer(result))  # prints 3
+
+Creating a String
+Strings are used for storing text.
+
+A string variable contains a collection of characters surrounded by double quotes.
+
+For example:
+
+greet <- "Hello"
+greet is a variable of type character and contains the value Hello.
+
+To print a string, we use the print() or cat() function.
+
+Example:
+
+greet <- "Hello"
+print(greet)
+
+// Output: "Hello"
+Important Points About Strings in R:
+
+In R, strings are not null-terminated. Each string is an element of a character vector and does not require a null character to mark its end.
+When you define a character vector to hold a string, such as fruit <- "Apple", R handles the memory allocation for you.
+The print() function in R prints the content of the string and also shows the index of the string in the vector (starting from [1]).
+Strings in R can be manipulated using various functions, such as nchar() to get the number of characters, substr() to extract substrings, and many others.
+
+Concatenation
+We can also join one string with another using paste0().
+
+This is called string concatenation. For eg -
+
+x <- "Good"
+y <- "Work"
+result <- paste0(x, y)
+print(result)
+
+# Output
+# GoodWork
+In the above program, the string x got concatenated with string y.
+
+We can use the nchar() function to get the length of a string.
+
+In R, strings are immutable, meaning you cannot directly change individual characters in a string.
+ However, we can create a new string with the desired changes using functions like substr() to manipulate parts of the string.
+Now we will use readLines() to get user input and can handle various types of inputs.
+
+The readLines() function is used for input. It reads the input data from the console.
+
+Example:
+
+x <- readLines( con="stdin", warn = FALSE )
+x <- as.integer(x)
+print(x)
+
+# Input:
+# 5
+# Output:
+# 5
+
+Declaring an integer x.
+Taking input in the variable x using readLines() function.
+Printing the value of x.
+Note: readLines() reads input as a character string, which we convert to other forms as required
+
+If & Else Statements
+We use conditions in code for decision making and controlling the flow of a program.
+
+if and else keywords can be used together to create conditions.
+
+The syntax for this:
+
+if (condition) {
+    # code to run if the condition is true
+} else {
+    # code to run if the above condition is false
+}
+Condition can be any expression which you are trying to evaluate. A simple condition can be:
+
+a <- 4
+b <- 5
+if (a == b) {
+    print("a and b are equal")
+} else {
+    print("a and b are not equal")
+}
+
+# Output:
+# a and b are not equal
+a == b is used to check whether the values of variables a and b are equal. == is called a equal to operator.
+
+Here's a table of common operators used in R conditions:
+
+Operator	Description	Example
+==	Equal to	a == b
+!=	Not equal to	a != b
+>	Greater than	a > b
+<	Less than	a < b
+>=	Greater than or equal to	a >= b
+<=	Less than or equal to	a <= b
+
+
+
+
+
+
+
+
+
+
